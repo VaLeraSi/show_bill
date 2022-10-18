@@ -1,8 +1,8 @@
 from wsgiref.simple_server import make_server
 
-from simba_framework.main import Framework
-from urls import fronts
-from views import routes
+from show_bill.simba_framework.main import Framework
+from show_bill.urls import fronts
+from show_bill.views import routes
 
 
 application = Framework(routes, fronts)
