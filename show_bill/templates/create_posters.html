@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+Создание объявления
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+    <div>
+        <a href="/posters-list/?id={{id}}">назад</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <h1>Создание объявления для категории "{{name}}"</h1>
+        <form method="post">
+            <input type="text" name="name" placeholder="Название">
+            <button type="submit">Сохранить и вернуться </button>
+        </form>
+    </div>
+{% endblock %}

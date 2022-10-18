@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+Список категорий
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+    <a href="/posters/">назад</a>
+
+    <h1>Список категорий</h1>
+    <ul>
+
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span>Количество объявлений: {{item.poster_count()}}</span>
+        </li>
+        {% endfor %}
+    </ul>
+
+	<div>
+		<li><a href="/poster-list/">Список объявлений</a></li>
+		<li><a href="/create-posters/">Создать объявление</a></li>
+	</div>
+{% endblock %}

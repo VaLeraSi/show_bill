@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+Создание студента
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+	<div>
+		<li>
+			<a href="/create-member/">Создать участника</a>
+		</li>
+		<li>
+			<a href="/add-member/">Добавить участника на мероприятие</a>
+		</li>
+	</div>
+    <h1>Список участников</h1>
+    <div>
+
+        {% for item in objects_list %}
+        <li>
+            {{item.name}}
+            {% for poster in item.posters %}
+                {{poster.name}}
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </div>
+{% endblock %}

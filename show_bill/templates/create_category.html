@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+Создание объявления
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+<h1>Создайте категорию</h1>
+<form method="post">
+    <input type="text" name="name" placeholder="Название категории">
+    <button type="submit">Сохранить и вернуться на главную</button>
+</form>
+{% endblock %}

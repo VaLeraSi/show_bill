@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Список объявлений
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+    <div>
+        <a href="/posters/">назад на главную</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <a href="/create-posters/?id={{id}}">Создать новое объявление</a>
+        <br>
+        <h1>Список объявлений для категории "{{name}}"</h1>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span><a href="/copy-poster/?name={{item.name}}">скопировать</a></span>
+        </li>
+        {% endfor %}
+    </div>
+{% endblock %}
